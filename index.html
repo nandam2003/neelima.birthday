@@ -2374,7 +2374,7 @@
         if (i <= letterMessage.length) {
           el.textContent = letterMessage.slice(0, i);
           i += 1;
-          setTimeout(step, 40);
+          setTimeout(step, 30);
         } else {
           if (document.fullscreenElement) {
             document.exitFullscreen().catch(err => console.log(err));
