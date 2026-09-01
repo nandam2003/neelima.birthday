@@ -2,8 +2,8 @@ export default async (request, context) => {
   const authHeader = request.headers.get("authorization");
 
   // Set your desired username and password here
-  const username = "bujji";
-  const password = "love";
+  const username = "birthday";
+  const password = "neelimabday";
 
   // Create the expected Basic Auth header
   const expectedAuth = "Basic " + btoa(`${username}:${password}`);
