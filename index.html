@@ -589,7 +589,6 @@
 
     /* ---------- SCRAPBOOK PAGE ---------- */
     #page-photos-1,
-    #page-photos-2,
     #page-photos-3 {
       padding: 0;
       background: #1a1a1a;
@@ -736,7 +735,8 @@
 
     /* ---------- SMOKE PUFF ---------- */
     .smoke-puff {
-      position: fixed; /* Fixed because getBoundingClientRect returns viewport relative */
+      position: fixed;
+      /* Fixed because getBoundingClientRect returns viewport relative */
       background: rgba(220, 220, 220, 0.7);
       border-radius: 50%;
       pointer-events: none;
@@ -751,6 +751,7 @@
         transform: translate(-50%, -50%) scale(0.5);
         opacity: 0.9;
       }
+
       100% {
         transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.6);
         opacity: 0;
@@ -933,7 +934,7 @@
       transform: translate(-50%, 20%) scale(0.6) rotate(-5deg);
 
       /* Romantic card paper with faint hearts */
-      background: 
+      background:
         url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 30" xmlns="http://www.w3.org/2000/svg"><path fill="%23ff6f91" opacity="0.1" d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.5-9.3,16-11.8,16-21.2C32,3.8,28.2,0,23.6,0z"/></svg>') 5% 10% / 40px no-repeat,
         url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 30" xmlns="http://www.w3.org/2000/svg"><path fill="%23ff6f91" opacity="0.08" d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.5-9.3,16-11.8,16-21.2C32,3.8,28.2,0,23.6,0z"/></svg>') 90% 85% / 60px no-repeat,
         url('data:image/svg+xml;utf8,<svg viewBox="0 0 32 30" xmlns="http://www.w3.org/2000/svg"><path fill="%23ff6f91" opacity="0.06" d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.5-9.3,16-11.8,16-21.2C32,3.8,28.2,0,23.6,0z"/></svg>') 85% 15% / 30px no-repeat,
@@ -987,6 +988,7 @@
       0% {
         transform: translate(-50%, -50%) scale(1) rotate(0deg);
       }
+
       100% {
         transform: translate(-50%, -52%) scale(1.01) rotate(0.5deg);
       }
@@ -1172,14 +1174,15 @@
     /* Heart Bubble Reveal */
     .bubble-container {
       position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       z-index: 99999;
       pointer-events: all;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
+
     .heart-bubble-wrap {
       position: absolute;
       will-change: transform, opacity;
@@ -1187,15 +1190,24 @@
       transform: scale(0);
       transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
+
     .heart-bubble-inner {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
     }
+
     .heart-bubble-inner svg {
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.2)) drop-shadow(0 2px 4px rgba(255,255,255,0.5));
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2)) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.5));
     }
+
     @keyframes bubble-wobble {
-      0% { transform: scale(1) translate(0, 0); }
-      100% { transform: scale(1.05) translate(4px, -4px); }
+      0% {
+        transform: scale(1) translate(0, 0);
+      }
+
+      100% {
+        transform: scale(1.05) translate(4px, -4px);
+      }
     }
   </style>
 </head>
@@ -1287,14 +1299,7 @@
   <!-- ============ PAGE 3: PHOTOS 1 ============ -->
   <section id="page-photos-1" class="page">
     <div id="scrapbookDesk1" class="scrapbook-desk"></div>
-    <div class="scrapbook-title">The ones I love<br><span>(drag them around!)</span></div>
-    <button class="btn-main scrapbook-next" onclick="goTo('page-photos-2')">Next →</button>
-  </section>
-
-  <!-- ============ PAGE 4: PHOTOS 2 ============ -->
-  <section id="page-photos-2" class="page">
-    <div id="scrapbookDesk2" class="scrapbook-desk"></div>
-    <div class="scrapbook-title">Where you shine the most<br><span>(drag them around!)</span></div>
+    <div class="scrapbook-title">my beautiful bangaram<br><span>(drag them around!)</span></div>
     <button class="btn-main scrapbook-next" onclick="goTo('page-photos-3')">Next →</button>
   </section>
 
@@ -1302,7 +1307,8 @@
   <section id="page-photos-3" class="page">
     <div id="scrapbookDesk3" class="scrapbook-desk"></div>
     <div class="scrapbook-title">Us<br><span>(drag them around!)</span></div>
-    <button class="btn-main scrapbook-next" onclick="heartBubbleReveal(() => goTo('page-letter'))">One more thing →</button>
+    <button class="btn-main scrapbook-next" onclick="heartBubbleReveal(() => goTo('page-letter', true))">One more thing
+      →</button>
   </section>
 
   <!-- ============ PAGE 4: LETTER ============ -->
@@ -1324,7 +1330,7 @@
     <div id="letterCard">
       <h2>For you</h2>
       <div id="letterText"></div>
-      <div class="sign">— [Your Name]</div>
+      <div class="sign">— ettlu, Nee Boyfriend</div>
       <button id="replayBtn" onclick="location.reload()">↺ Watch it again</button>
     </div>
   </section>
@@ -1333,21 +1339,12 @@
 
   <script>
     const photos1 = [
-      { img: "img/scrap_1.jpeg", gradient: "linear-gradient(135deg,#ff9a9e,#fecfef)", caption: "Absolutely stunning ✨" },
-      { img: "img/scrap_2.jpeg", gradient: "linear-gradient(135deg,#a18cd1,#fbc2eb)", caption: "One of my favorite smiles 😊" },
-      { img: "img/scrap_3.jpeg", gradient: "linear-gradient(135deg,#ff6a88,#ff99ac)", caption: "Can't get over this look 💖" },
-      { img: "img/scrap_4.jpeg", gradient: "linear-gradient(135deg,#f6d365,#fda085)", caption: "Always so beautiful 🌸" },
-      { img: "img/scrap_5.jpeg", gradient: "linear-gradient(135deg,#84fab0,#8fd3f4)", caption: "Literally glowing here ✨" },
-      { img: "img/scrap_6.jpeg", gradient: "linear-gradient(135deg,#f77062,#fe5196)", caption: "Flawless ❤️" }
-    ];
-
-    const photos2 = [
-      { img: "img/scrap_7.jpeg", gradient: "linear-gradient(135deg,#ff9a9e,#fecfef)", caption: "Shining bright 🌟" },
-      { img: "img/scrap_8.jpeg", gradient: "linear-gradient(135deg,#a18cd1,#fbc2eb)", caption: "Pure joy 😊" },
-      { img: "img/scrap_9.jpeg", gradient: "linear-gradient(135deg,#ff6a88,#ff99ac)", caption: "Love this energy 💫" },
-      { img: "img/scrap_10.jpeg", gradient: "linear-gradient(135deg,#f6d365,#fda085)", caption: "So gorgeous 🌸" },
-      { img: "img/scrap_11.jpeg", gradient: "linear-gradient(135deg,#84fab0,#8fd3f4)", caption: "That smile! ✨" },
-      { img: "img/scrap_12.jpeg", gradient: "linear-gradient(135deg,#f77062,#fe5196)", caption: "Beautiful ❤️" }
+      { img: "img/her_1.jpeg", gradient: "linear-gradient(135deg,#ff9a9e,#fecfef)", caption: "Absolutely stunning ✨" },
+      { img: "img/her_2.jpeg", gradient: "linear-gradient(135deg,#a18cd1,#fbc2eb)", caption: "One of my favorite smiles 😊" },
+      { img: "img/her_3.jpeg", gradient: "linear-gradient(135deg,#ff6a88,#ff99ac)", caption: "Can't get over this look 💖" },
+      { img: "img/her_4.jpeg", gradient: "linear-gradient(135deg,#f6d365,#fda085)", caption: "Always so beautiful 🌸" },
+      { img: "img/her_5.jpeg", gradient: "linear-gradient(135deg,#84fab0,#8fd3f4)", caption: "Literally glowing here ✨" },
+      { img: "img/her_6.jpeg", gradient: "linear-gradient(135deg,#f77062,#fe5196)", caption: "Flawless ❤️" }
     ];
 
     const photos3 = [
@@ -1360,17 +1357,7 @@
       { img: "img/us_7.jpeg", gradient: "linear-gradient(135deg,#f6d365,#fda085)", caption: "Always ❤️" }
     ];
 
-    const letterMessage = `My dearest Neelima Bujji,
-
-From the moment you came into my life, everything just made sense. You are the light that brightens my darkest days and the warmth that makes my heart feel completely at home. 
-
-Thank you for being my safe space, my biggest smile, and my favorite person in the entire universe. Every little moment with you, every laugh, and every quiet look we share means more to me than words could ever express. I am endlessly proud of the beautiful, kind, and amazing person you are.
-
-I built this little space just to remind you how much you are cherished, today and every single day. 
-
-Here is to 23, to us, and to a lifetime of holding your hand.
-
-Happy Birthday, my love. I love you more than anything.`;
+    const letterMessage = `Happy Birthday to my dearest bujji konda. The one who always looks up to me. Thank you for pulling me through a lot of ups and downs, literally bearing me through all our journey. Thank you for making me feel always special and Handsome 😌, but today I want to make you the special one and My princess. Love you a lot bujji. And wish you a Happy Happy Birthday and all the celebrations you have always deserved. Thank you for always being my little energy ball in life. 💋❤️🎂🌹`;
 
     /* ================= START FULLSCREEN ================= */
     document.getElementById('startBtn').addEventListener('click', () => {
@@ -1390,88 +1377,175 @@ Happy Birthday, my love. I love you more than anything.`;
       const container = document.createElement('div');
       container.className = 'bubble-container';
       document.body.appendChild(container);
-      
-      const numBubbles = 100;
+
+      const numCols = Math.ceil(window.innerWidth / 90);
+      const numRows = Math.ceil(window.innerHeight / 90);
+      const cellW = window.innerWidth / numCols;
+      const cellH = window.innerHeight / numRows;
+
       const bubbles = [];
       const colors = ['#ff4d4d', '#ff9999', '#ffcc99', '#ff66b2', '#ff99cc', '#ffb3d9', '#ff6666'];
-      
-      for (let i = 0; i < numBubbles; i++) {
-        const wrap = document.createElement('div');
-        wrap.className = 'heart-bubble-wrap';
-        
-        // Random position, size, color
-        const size = 50 + Math.random() * 120;
-        wrap.style.width = size + 'px';
-        wrap.style.height = size + 'px';
-        wrap.style.left = (Math.random() * 120 - 10) + 'vw';
-        wrap.style.top = (Math.random() * 120 - 10) + 'vh';
-        
-        const inner = document.createElement('div');
-        inner.className = 'heart-bubble-inner';
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        inner.innerHTML = heartSVG(color);
-        inner.style.animation = `bubble-wobble ${1 + Math.random()}s ease-in-out infinite alternate`;
-        inner.style.animationDelay = `${Math.random()}s`;
-        
-        wrap.appendChild(inner);
-        container.appendChild(wrap);
-        bubbles.push({ el: wrap, delay: Math.random() * 1200 });
+
+      for (let r = 0; r < numRows; r++) {
+        for (let c = 0; c < numCols; c++) {
+          const wrap = document.createElement('div');
+          wrap.className = 'heart-bubble-wrap';
+
+          const size = 50 + Math.random() * 30; // 50 to 80
+          const radius = size / 2;
+          wrap.style.width = size + 'px';
+          wrap.style.height = size + 'px';
+
+          const left = c * cellW + (cellW / 2);
+          const top = r * cellH + (cellH / 2);
+
+          const inner = document.createElement('div');
+          inner.className = 'heart-bubble-inner';
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          inner.innerHTML = heartSVG(color);
+          inner.style.animation = `bubble-wobble ${1 + Math.random()}s ease-in-out infinite alternate`;
+          inner.style.animationDelay = `${Math.random()}s`;
+
+          wrap.appendChild(inner);
+          container.appendChild(wrap);
+
+          bubbles.push({
+            el: wrap,
+            x: left,
+            y: top,
+            vx: (Math.random() - 0.5) * 3,
+            vy: (Math.random() - 0.5) * 3,
+            radius: radius,
+            delay: Math.random() * 1000,
+            active: false
+          });
+        }
       }
-      
-      // Inflate phase
+
+      let animating = true;
+
       bubbles.forEach(b => {
+        b.el.style.left = `calc(${b.x}px - ${b.radius}px)`;
+        b.el.style.top = `calc(${b.y}px - ${b.radius}px)`;
         setTimeout(() => {
           b.el.style.opacity = '0.9';
-          b.el.style.transform = `scale(${1 + Math.random() * 0.4})`;
+          b.el.style.transform = `scale(1)`;
+          b.active = true;
         }, b.delay);
       });
-      
-      // Pop phase
+
+      function updatePhysics() {
+        if (!animating) return;
+
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        for (let i = 0; i < bubbles.length; i++) {
+          const b1 = bubbles[i];
+          if (!b1.active) continue;
+
+          b1.x += b1.vx;
+          b1.y += b1.vy;
+
+          if (b1.x - b1.radius < 0) { b1.x = b1.radius; b1.vx *= -1; }
+          if (b1.x + b1.radius > width) { b1.x = width - b1.radius; b1.vx *= -1; }
+          if (b1.y - b1.radius < 0) { b1.y = b1.radius; b1.vy *= -1; }
+          if (b1.y + b1.radius > height) { b1.y = height - b1.radius; b1.vy *= -1; }
+
+          for (let j = i + 1; j < bubbles.length; j++) {
+            const b2 = bubbles[j];
+            if (!b2.active) continue;
+
+            const dx = b2.x - b1.x;
+            const dy = b2.y - b1.y;
+            const distSq = dx * dx + dy * dy;
+            const minDist = b1.radius + b2.radius;
+
+            if (distSq < minDist * minDist) {
+              const dist = Math.sqrt(distSq);
+              const overlap = minDist - dist;
+
+              const nx = dx / dist;
+              const ny = dy / dist;
+
+              b1.x -= nx * (overlap / 2);
+              b1.y -= ny * (overlap / 2);
+              b2.x += nx * (overlap / 2);
+              b2.y += ny * (overlap / 2);
+
+              const p = (b1.vx * nx + b1.vy * ny - b2.vx * nx - b2.vy * ny);
+              b1.vx -= p * nx;
+              b1.vy -= p * ny;
+              b2.vx += p * nx;
+              b2.vy += p * ny;
+            }
+          }
+
+          const speedSq = b1.vx * b1.vx + b1.vy * b1.vy;
+          if (speedSq > 9) {
+            const speed = Math.sqrt(speedSq);
+            b1.vx = (b1.vx / speed) * 3;
+            b1.vy = (b1.vy / speed) * 3;
+          } else if (speedSq < 1 && speedSq > 0.01) {
+            const speed = Math.sqrt(speedSq);
+            b1.vx = (b1.vx / speed) * 1;
+            b1.vy = (b1.vy / speed) * 1;
+          }
+
+          b1.el.style.left = `calc(${b1.x}px - ${b1.radius}px)`;
+          b1.el.style.top = `calc(${b1.y}px - ${b1.radius}px)`;
+        }
+        requestAnimationFrame(updatePhysics);
+      }
+
+      requestAnimationFrame(updatePhysics);
+
       setTimeout(() => {
+        if (callback) callback();
+
         bubbles.forEach(b => {
-          b.el.style.transition = 'opacity 0.15s ease-out, transform 0.15s ease-in';
+          b.el.style.transition = 'opacity 0.2s ease-out, transform 0.2s ease-in';
           b.el.style.opacity = '0';
-          b.el.style.transform = 'scale(1.5)';
+          b.el.style.transform = 'scale(1.8)';
         });
-        
+
         const flash = document.createElement('div');
         flash.style.position = 'fixed';
         flash.style.top = '0'; flash.style.left = '0';
         flash.style.width = '100vw'; flash.style.height = '100vh';
         flash.style.backgroundColor = 'white';
-        flash.style.opacity = '0.5';
-        flash.style.transition = 'opacity 0.3s ease-out';
+        flash.style.opacity = '0.7';
+        flash.style.transition = 'opacity 0.4s ease-out';
         flash.style.zIndex = '99998';
         flash.style.pointerEvents = 'none';
         document.body.appendChild(flash);
-        
+
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             flash.style.opacity = '0';
           });
         });
-        setTimeout(() => flash.remove(), 300);
+        setTimeout(() => flash.remove(), 400);
 
         setTimeout(() => {
+          animating = false;
           container.remove();
-          if (callback) callback();
-        }, 150); 
-      }, 2500); 
+        }, 250);
+      }, 3500);
     }
 
     /* ================= NAVIGATION ================= */
-    function goTo(id) {
+    function goTo(id, skipHearts = false) {
       document.querySelectorAll('.page').forEach(p => {
         p.classList.remove('active', 'fade-in');
       });
       const target = document.getElementById(id);
       target.classList.add('active', 'fade-in');
       window.scrollTo({ top: 0, behavior: 'instant' });
-      dumpHearts(55); // Shower of hearts instead of confetti
+      if (!skipHearts) dumpHearts(55); // Shower of hearts instead of confetti
 
       if (id === 'page-cake') initCake();
       if (id === 'page-photos-1') initPhotos(photos1, 'scrapbookDesk1');
-      if (id === 'page-photos-2') initPhotos(photos2, 'scrapbookDesk2');
       if (id === 'page-photos-3') initPhotos(photos3, 'scrapbookDesk3');
       if (id === 'page-letter') resetLetterScene();
     }
@@ -1704,16 +1778,16 @@ Happy Birthday, my love. I love you more than anything.`;
           smoke.className = 'smoke-puff';
           smoke.style.left = x + 'px';
           smoke.style.top = y + 'px';
-          
+
           const angle = Math.random() * Math.PI * 2;
           const dist = 20 + Math.random() * 30;
           smoke.style.setProperty('--tx', (Math.cos(angle) * dist) + 'px');
           smoke.style.setProperty('--ty', (Math.sin(angle) * dist) + 'px');
-          
+
           const size = 15 + Math.random() * 25;
           smoke.style.width = size + 'px';
           smoke.style.height = size + 'px';
-          
+
           document.body.appendChild(smoke);
           setTimeout(() => smoke.remove(), 500);
         }
@@ -1747,7 +1821,7 @@ Happy Birthday, my love. I love you more than anything.`;
               if (state === 3) {
                 const rect = fake.getBoundingClientRect();
                 createSmokePoof(rect.left + rect.width / 2, rect.top + rect.height / 2);
-                
+
                 fake.style.transform = 'scale(0)';
                 fake.style.opacity = '0';
                 hint.textContent = "nope, that's a fake 😂";
@@ -2299,8 +2373,8 @@ Happy Birthday, my love. I love you more than anything.`;
       function step() {
         if (i <= letterMessage.length) {
           el.textContent = letterMessage.slice(0, i);
-          i += 2;
-          setTimeout(step, 12);
+          i += 1;
+          setTimeout(step, 40);
         } else {
           if (document.fullscreenElement) {
             document.exitFullscreen().catch(err => console.log(err));
